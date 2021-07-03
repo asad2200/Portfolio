@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Grid from "@material-ui/core/Grid";
 import Drawer from "@material-ui/core/Drawer";
 import Box from "@material-ui/core/Box";
 import AppBar from "@material-ui/core/AppBar";
@@ -65,7 +66,15 @@ const Navbar = () => {
 
   const sideList = () => (
     <Box className={classes.menuSliderContainer} component="div">
-      <Avatar variant="square" className={classes.avatar} src={avatar} alt="Mahmudul Alam" />
+      <Avatar variant="square" className={classes.avatar} src={avatar} alt="Asad Jakahvala" />
+      <Grid container justify="center">
+        <Typography className={classes.title}>
+                  asadjakhavala92@gmail.com
+        </Typography>
+        <Typography className={classes.title}>
+                  +91 9512767792
+        </Typography>
+      </Grid>
       <Divider />
       <List>
         {menuItems.map((item, i) => (

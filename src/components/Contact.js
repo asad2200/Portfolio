@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
@@ -13,11 +13,15 @@ const useStyles = makeStyles((theme) => ({
     background: "#090C10",
     height: "100vh",
   },
+  detail: {
+    color: "#F0F6FC",
+    textAlign: "center",
+    marginBottom:"2px",
+  },
   heading: {
     color: "tomato",
     textAlign: "center",
     textTransform: "uppercase",
-    marginBottom: "1rem",
   },
   form: {
     top: "50%",
@@ -63,6 +67,14 @@ const InputField = withStyles({
 
 const Contact = () => {
   const classes = useStyles();
+  const [name, setName] = useState("");
+  const [body, setBody] = useState("");
+
+  var sendMail = (e) => {
+    e.preventDefault();
+    window.open(`mailto:asadjakhavala92@gmail.com?subject=${name}-contact-you&body=${body}`);
+  }
+
   return (
     <Box component="div" className={classes.contactContainer}>
       <Grid container justify="center">
@@ -70,18 +82,19 @@ const Contact = () => {
           <Typography variant="h5" className={classes.heading}>
             Hire or Contact me...
           </Typography>
+          <Typography className={classes.detail}>
+                      asadjakhavala92@gmail.com<br/>
+            </Typography>
+            <Typography className={classes.detail}>
+                      +91 9512767792
+           </Typography>
           <InputField
             fullWidth={true}
             label="Name"
             variant="outlined"
             inputProps={{ className: classes.input }}
-          />
-          <InputField
-            fullWidth={true}
-            label="Email"
-            variant="outlined"
-            inputProps={{ className: classes.input }}
             className={classes.field}
+            onChange={(e) => setName(e.target.value)}
           />
           <InputField
             fullWidth={true}
@@ -90,12 +103,14 @@ const Contact = () => {
             multiline
             rows={4}
             inputProps={{ className: classes.input }}
+            onChange={(e) => setBody(e.target.value)}
           />
           <Button
             variant="outlined"
             fullWidth={true}
             endIcon={<Send />}
             className={classes.button}
+            onClick={sendMail}
           >
             Contact Me
           </Button>

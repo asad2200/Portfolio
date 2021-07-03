@@ -17,7 +17,7 @@ import drs from "../images/skills/drs.png";
 
 import github from "../images/skills/github.svg";
 import sqllite from "../images/skills/sqllite.svg";
-import postgres from "../images/skills/postgres.svg";
+// import postgres from "../images/skills/postgres.svg";
 import mysql from "../images/skills/mysql.svg";
 
 
@@ -99,7 +99,7 @@ const Skills = () => {
           </Typography>
           <img src={github} alt="github" className={classes.logo}/> 
           <img src={sqllite} alt="sqllite" className={classes.logo}/> 
-          <img src={postgres} alt="postgres" className={classes.logo}/> 
+          {/* <img src={postgres} alt="postgres" className={classes.logo}/>  */}
           <img src={mysql} alt="mysql" className={classes.logo}/> 
       </Box>
     </Box>

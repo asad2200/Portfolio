@@ -64,5 +64,13 @@ export const projects = [
       source_code:"https://github.com/asad2200/automart-frontend",
       live:"https://auto-mart.netlify.app/",
     },   
+    {
+      name: "Bookkeeping (DesktopApp JAVA)",
+      description: ['This is " INVENTORY MANAGMENT SYSTEM" in " JAVA (SWING). "',
+      'This is first big project i created. :)',
+      ],
+      image: project5,
+      source_code:"https://github.com/asad2200/Book-Keeping",
+    },   
 ];
 
