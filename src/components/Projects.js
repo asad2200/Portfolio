@@ -9,7 +9,7 @@ export const projects = [
       name: "Stock Tracker (django)",
       description: ["It's Stock Tracking APP.",
       'Stock data updates in REAL-TIME',
-      "For the real-time update, I used 'django-channels'.",
+      "For the real-time update done through 'django-channels'.",
       "Data comes from the 'yahoo-finance' website by 'django-celery.'"
       ],
       image: project1,
@@ -28,7 +28,7 @@ export const projects = [
     {
       name: "authsimple (django-package)",
       description: [
-        "authsimple is a package that includes an 'authentication system in django project'.",
+        "authsimple is a package that includes an AUTHENTICATION SYSTEM in DJANGO PROJECT.",
         "It can be installed using 'pip install Django-authsimple'.",
         "This package also contain EMAIL VALIDATION & FORGOT PASSWORD on EMAIL as well"
       ],
@@ -56,7 +56,7 @@ export const projects = [
     },  
     {
       name: "Automart (frontend + backend)",
-      description: ["It's a Website for a 'car accessories shop'.",
+      description: ["It's a Website for a CAR ACCESSORIES SHOP.",
       "Frontend created using REACTJS. ",
       "Backend is created using 'django-rest-framework'."
       ],
