@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor:"tomato",
     color:"#F0F6FC",
     marginTop:"10px",
+    marginRight:"4px",
     '&:hover': {
       backgroundColor: 'tomato',
       opacity:"0.7",
@@ -68,8 +69,11 @@ const Header = () => {
             loop
           />
         </Typography>
-        <Button variant="contained" className={classes.btn} href="#">
-            View Resume
+        <Button variant="contained" className={classes.btn} target="_blank" rel="noopener" href="https://drive.google.com/file/d/1xHAuEnR4D8JKO4S5ewRsRrHLWfQ-A_uy/view?usp=sharing">
+          <code>View Resume</code>
+        </Button>
+        <Button variant="contained" className={classes.btn} href="/skills">
+            <code>{`Skills >>`}</code>
         </Button>
       </Box>      
     </Box>

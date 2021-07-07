@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Drawer from "@material-ui/core/Drawer";
@@ -20,7 +20,7 @@ import ContactMail from "@material-ui/icons/ContactMail";
 import { makeStyles } from "@material-ui/core/styles";
 import avatar from "../avatar2.svg";
 import MenuIcon from '@material-ui/icons/Menu';
-
+import { useHistory, useLocation } from 'react-router-dom'
 import Footer from "../components/Footer";
 
 const useStyles = makeStyles((theme) => ({
@@ -60,10 +60,24 @@ const menuItems = [
 ];
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const history = useHistory()
+  const location= useLocation()
 
+
+  useEffect(() => {
+    return history.listen(location => {
+
+      if (history.action === 'POP') {
+        if (open){
+          setOpen(false)
+        }
+      }
+
+    })
+  }, [ history,open ])
+  
   const sideList = () => (
     <Box className={classes.menuSliderContainer} component="div">
       <Avatar variant="square" className={classes.avatar} src={avatar} alt="Asad Jakahvala" />
@@ -82,7 +96,7 @@ const Navbar = () => {
             button
             key={i}
             className={classes.listItem}
-            onClick={() => setOpen(false)}
+            onClick={() => setOpen(false) }
             component={Link}
             to={item.listPath}
           >
@@ -103,10 +117,10 @@ const Navbar = () => {
           <Toolbar>
             <Box display='flex' flexGrow={1}>
             <Typography variant="h5" className={classes.title}>
-                Asad Jakhavala
+                <code>{`<Asad Jakhavala/>`}</code>
             </Typography>
             </Box>
-            <IconButton onClick={() => setOpen(true)}>
+            <IconButton onClick={() => { setOpen(true); history.push(location.pathname); }}>
                 <MenuIcon fontSize="large" className={classes.menu} />
               </IconButton>
           </Toolbar>
